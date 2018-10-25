@@ -17,6 +17,7 @@ class UserList(Resource):
         return UserService.get_all_users()
 
     @api.response(201, 'User successfully created.')
+    @api.response(209, 'User failed to create. Username already taken.')
 
     @api.doc('create a new user')
     @api.expect(_user, validate=True)
@@ -26,16 +27,16 @@ class UserList(Resource):
         return UserService.save_new_user(data=data)
 
 
-@api.route('/<public_id>')
-@api.param('public_id', 'The User identifier')
+@api.route('/<username>')
+@api.param('username', 'The User identifier')
 @api.response(404, 'User not found.')
 class User(Resource):
     @api.doc('get a user')
     @api.marshal_with(_user)
-    def get(self, public_id):
+    def get(self, username):
         """get a user given its identifier"""
-        user = UserService.get_a_user(public_id)
+        user = UserService.get_a_user(username)
         if not user:
-            api.abort(404)
+            api.abort(404, "User not found.")
         else:
             return user

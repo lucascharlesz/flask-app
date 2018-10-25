@@ -7,16 +7,15 @@ from app.main.models.user import User
 class UserService(object):
     @staticmethod
     def save_new_user(data):
-        user = User.query.filter_by(email=data['email']).first()
+        user = User.query.filter_by(username=data['username']).first()
         if not user:
             new_user = User(
-                public_id=str(uuid.uuid4()),
                 username=data['username'],
                 password=data['password'],
                 registered_on=datetime.datetime.utcnow()
             )
 
-            save_changes(new_user)
+            UserService.save_changes(new_user)
 
             response_object = {
                 'status': 'success',
@@ -38,8 +37,8 @@ class UserService(object):
         return User.query.all()
 
     @staticmethod
-    def get_a_user(public_id):
-        return User.query.filter_by(public_id=public_id).first()
+    def get_a_user(username):
+        return User.query.filter_by(username=username).first()
 
     @staticmethod
     def save_changes(data):

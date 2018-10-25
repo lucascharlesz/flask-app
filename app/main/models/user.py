@@ -8,7 +8,6 @@ class User(db.Model):
     username = db.Column(db.String(255), unique=True, nullable=False)
     registered_on = db.Column(db.DateTime, nullable=False)
     password_hash = db.Column(db.String(100))
-    public_id = db.Column(db.String(100), unique=True)
 
     @property
     def password(self):
