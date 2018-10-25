@@ -39,7 +39,7 @@ After the migration, we need to apply it to the database:
 Now, you can simply run the server and you will be able to see the swagger documentation:
 * ` $ python manage.py run `
 
-If you open your browser you might be able to see something like this:
+If you open your browser at `localhost:5000` you might be able to see something like this:
 <img src="https://cdn-images-1.medium.com/max/800/1*Us_S2WLR3AQAyfOvkzZ38Q.png" />
 
 To make the server visible to the network run:
