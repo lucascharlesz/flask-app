@@ -1,11 +1,10 @@
 from flask import request
 from flask_restplus import Resource
 
-from ..utils.dto import UserDto
 from ..services.user_service import UserService
 
-api = UserDto.api
-_user = UserDto.user
+api = UserService.api
+_user = UserService.user
 
 
 @api.route('/')

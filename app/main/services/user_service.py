@@ -3,8 +3,16 @@ import datetime
 
 from app.main import db
 from app.main.models.user import User
+from flask_restplus import Namespace, fields
 
-class UserService(object):
+
+class UserService:
+    api = Namespace('user', description='user related operations')
+    user = api.model('user', {
+        'username': fields.String(required=True, description='user username'),
+        'password': fields.String(required=True, description='user password'),
+    })
+
     @staticmethod
     def save_new_user(data):
         user = User.query.filter_by(username=data['username']).first()
