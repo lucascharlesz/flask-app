@@ -17,7 +17,7 @@ We also need its package manager:
 
 ## Virtual Environment
 We need to isolate the project's environment and install the dependencies in it. To do so, we create a *virtualenv*. To create your *virtualenv* run from the project's root directory in your terminal:
-* ` python3 -m venv venv `
+* ` $ python3 -m venv venv `
 
 It might have created a **venv** directory in your project's folder.
 
