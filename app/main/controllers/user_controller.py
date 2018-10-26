@@ -40,3 +40,4 @@ class User(Resource):
             api.abort(404, "User not found.")
         else:
             return user
+            
