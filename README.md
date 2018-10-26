@@ -29,7 +29,7 @@ We need to install the project's dependencies throught the package manager. Firs
 
 ## Project Dependencies
 Then, you can install the dependencies:
-* ` $ pip3 install requirements.txt `
+* ` $ pip3 install -r requirements.txt `
 
 Now, initialize the database:
 * ` $ python manage.py db init `
