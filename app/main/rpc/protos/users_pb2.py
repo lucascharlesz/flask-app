@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='users',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1f\x61pp/main/rpc/protos/users.proto\x12\x05users\"$\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\r\"F\n\x11\x43reateUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"-\n\x10\x43reateUserResult\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User\",\n\x0fGetUsersRequest\x12\x19\n\x04user\x18\x01 \x03(\x0b\x32\x0b.users.User\"+\n\x0eGetUsersResult\x12\x19\n\x04user\x18\x01 \x03(\x0b\x32\x0b.users.User2\x85\x01\n\x05Users\x12?\n\nCreateUser\x12\x18.users.CreateUserRequest\x1a\x17.users.CreateUserResult\x12;\n\x08get_user\x12\x16.users.GetUsersRequest\x1a\x15.users.GetUsersResult0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x1f\x61pp/main/rpc/protos/users.proto\x12\x05users\"$\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\r\"F\n\x11\x43reateUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"-\n\x10\x43reateUserResult\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User\",\n\x0fGetUsersRequest\x12\x19\n\x04user\x18\x01 \x03(\x0b\x32\x0b.users.User\"+\n\x0eGetUsersResult\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User2\x85\x01\n\x05Users\x12?\n\nCreateUser\x12\x18.users.CreateUserRequest\x1a\x17.users.CreateUserResult\x12;\n\x08get_user\x12\x16.users.GetUsersRequest\x1a\x15.users.GetUsersResult0\x01\x62\x06proto3')
 )
 
 
@@ -179,8 +179,8 @@ _GETUSERSRESULT = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='user', full_name='users.GetUsersResult.user', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),

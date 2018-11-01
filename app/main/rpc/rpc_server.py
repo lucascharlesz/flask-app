@@ -16,11 +16,19 @@ class UsersServicer(users_pb2_grpc.UsersServicer):
     # calculator.square_root is exposed here
     # the request and response are of the data type
     # calculator_pb2.Number
+    def get_all_users(self, request, context):
+        response = UserService.get_all_users()
+        # import pdb; pdb.set_trace()
+        for user in response:
+            user = users_pb2.User(username=user.username, id=user.id)
+            yield users_pb2.GetUsersResult(user=user)
+
     def get_user(self, request, context):
-        import pdb; pdb.set_trace()
-        response = users_pb2.GetUsersResult()
-        response.user = UserService.get_a_user(request.user[0].username) if request.user else UserService.get_all_users()
-        return response
+        response = UserService.get_a_user(username=request.user[0].username)
+        users = []
+        users.append(users_pb2.User(username=response.username, id=response.id))
+        for user in users:
+            yield users_pb2.GetUsersResult(user=user)
 
 
 # create a gRPC server

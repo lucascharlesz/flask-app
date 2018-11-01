@@ -9,6 +9,9 @@ from app.main import create_app, db
 from app.main.models import user
 from app.main.rpc import rpc_server
 
+from app import database
+from app.database.models.user import User
+
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.register_blueprint(blueprint)
 
@@ -36,6 +39,11 @@ def test():
     if result.wasSuccessful():
         return 0
     return 1
+
+@manager.command
+def test2():
+    print(database.session.query(User).all())
+
 
 if __name__ == '__main__':
     manager.run()

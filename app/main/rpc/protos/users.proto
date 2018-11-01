@@ -22,7 +22,7 @@ message GetUsersRequest {
 }
 
 message GetUsersResult {
-  repeated User user = 1;
+  User user = 1;
 }
 
 service Users {

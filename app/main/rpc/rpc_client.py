@@ -14,10 +14,11 @@ def get_users(a_username=None):
     # create a valid request message
     user = users_pb2.User(username=a_username, id=None)
     params = users_pb2.GetUsersRequest(user=[user])
-    import pdb; pdb.set_trace()
+    
+    # import pdb; pdb.set_trace()
 
     # make the call
-    response = stub.get_user(params)
+    for user in stub.get_user(params):
 
-    # et voilà
-    print(response.value)
+        # et voilà
+        print(user.user)
