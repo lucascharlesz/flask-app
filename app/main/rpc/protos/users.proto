@@ -4,7 +4,7 @@ package users;
 
 message User {
   string username = 1;
-  uint32 user_id = 2;
+  uint32 id = 2;
 }
 
 message CreateUserRequest {
@@ -22,10 +22,10 @@ message GetUsersRequest {
 }
 
 message GetUsersResult {
-  User user = 1;
+  repeated User user = 1;
 }
 
 service Users {
   rpc CreateUser (users.CreateUserRequest) returns (users.CreateUserResult);
-  rpc GetUsers (users.GetUsersRequest) returns (stream users.GetUsersResult);
+  rpc get_user (users.GetUsersRequest) returns (stream users.GetUsersResult);
 }

@@ -19,8 +19,8 @@ class UsersStub(object):
         request_serializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.CreateUserRequest.SerializeToString,
         response_deserializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.CreateUserResult.FromString,
         )
-    self.GetUsers = channel.unary_stream(
-        '/users.Users/GetUsers',
+    self.get_user = channel.unary_stream(
+        '/users.Users/get_user',
         request_serializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.GetUsersRequest.SerializeToString,
         response_deserializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.GetUsersResult.FromString,
         )
@@ -37,7 +37,7 @@ class UsersServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetUsers(self, request, context):
+  def get_user(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -52,8 +52,8 @@ def add_UsersServicer_to_server(servicer, server):
           request_deserializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.CreateUserRequest.FromString,
           response_serializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.CreateUserResult.SerializeToString,
       ),
-      'GetUsers': grpc.unary_stream_rpc_method_handler(
-          servicer.GetUsers,
+      'get_user': grpc.unary_stream_rpc_method_handler(
+          servicer.get_user,
           request_deserializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.GetUsersRequest.FromString,
           response_serializer=app_dot_main_dot_rpc_dot_protos_dot_users__pb2.GetUsersResult.SerializeToString,
       ),

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='users',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1f\x61pp/main/rpc/protos/users.proto\x12\x05users\")\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\r\"F\n\x11\x43reateUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"-\n\x10\x43reateUserResult\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User\",\n\x0fGetUsersRequest\x12\x19\n\x04user\x18\x01 \x03(\x0b\x32\x0b.users.User\"+\n\x0eGetUsersResult\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User2\x85\x01\n\x05Users\x12?\n\nCreateUser\x12\x18.users.CreateUserRequest\x1a\x17.users.CreateUserResult\x12;\n\x08GetUsers\x12\x16.users.GetUsersRequest\x1a\x15.users.GetUsersResult0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x1f\x61pp/main/rpc/protos/users.proto\x12\x05users\"$\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\r\"F\n\x11\x43reateUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"-\n\x10\x43reateUserResult\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User\",\n\x0fGetUsersRequest\x12\x19\n\x04user\x18\x01 \x03(\x0b\x32\x0b.users.User\"+\n\x0eGetUsersResult\x12\x19\n\x04user\x18\x01 \x03(\x0b\x32\x0b.users.User2\x85\x01\n\x05Users\x12?\n\nCreateUser\x12\x18.users.CreateUserRequest\x1a\x17.users.CreateUserResult\x12;\n\x08get_user\x12\x16.users.GetUsersRequest\x1a\x15.users.GetUsersResult0\x01\x62\x06proto3')
 )
 
 
@@ -40,7 +40,7 @@ _USER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='users.User.user_id', index=1,
+      name='id', full_name='users.User.id', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -59,7 +59,7 @@ _USER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=42,
-  serialized_end=83,
+  serialized_end=78,
 )
 
 
@@ -103,8 +103,8 @@ _CREATEUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=85,
-  serialized_end=155,
+  serialized_start=80,
+  serialized_end=150,
 )
 
 
@@ -134,8 +134,8 @@ _CREATEUSERRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=157,
-  serialized_end=202,
+  serialized_start=152,
+  serialized_end=197,
 )
 
 
@@ -165,8 +165,8 @@ _GETUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=204,
-  serialized_end=248,
+  serialized_start=199,
+  serialized_end=243,
 )
 
 
@@ -179,8 +179,8 @@ _GETUSERSRESULT = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='user', full_name='users.GetUsersResult.user', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -196,8 +196,8 @@ _GETUSERSRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=250,
-  serialized_end=293,
+  serialized_start=245,
+  serialized_end=288,
 )
 
 _CREATEUSERRESULT.fields_by_name['user'].message_type = _USER
@@ -253,8 +253,8 @@ _USERS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=296,
-  serialized_end=429,
+  serialized_start=291,
+  serialized_end=424,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateUser',
@@ -266,8 +266,8 @@ _USERS = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='GetUsers',
-    full_name='users.Users.GetUsers',
+    name='get_user',
+    full_name='users.Users.get_user',
     index=1,
     containing_service=None,
     input_type=_GETUSERSREQUEST,

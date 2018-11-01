@@ -7,6 +7,7 @@ from flask_script import Manager
 from app import blueprint
 from app.main import create_app, db
 from app.main.models import user
+from app.main.rpc import rpc_server
 
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.register_blueprint(blueprint)
@@ -22,6 +23,10 @@ manager.add_command('db', MigrateCommand)
 @manager.command
 def run():
     app.run()
+
+@manager.command
+def start_grpc():
+    rpc_server.start()
 
 @manager.command
 def test():
